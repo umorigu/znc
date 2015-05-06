@@ -975,7 +975,14 @@ void CClient::ParseUser(const CString& sAuthLine) {
 
 		ParseIdentifier(sAuthLine.substr(0, uSlash));
 	} else {
-		ParseIdentifier(sAuthLine);
+		const size_t uDot = sAuthLine.rfind(".");
+		if (uDot != CString::npos) {
+			m_sNetwork = sAuthLine.substr(uDot + 1);
+
+			ParseIdentifier(sAuthLine.substr(0, uDot));
+		} else {
+			ParseIdentifier(sAuthLine);
+		}
 	}
 }
 
