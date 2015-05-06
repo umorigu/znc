@@ -803,7 +803,7 @@ bool CUser::IsValidUserName(const CString& sUserName) {
 		return false;
 	}
 
-	if ((*p < 'a' || *p > 'z') && (*p < 'A' || *p > 'Z')) {
+	if ((*p < 'a' || *p > 'z') && (*p < 'A' || *p > 'Z') && (*p < '0' || *p > '9')) {
 		return false;
 	}
 
