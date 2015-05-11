@@ -706,9 +706,11 @@ void CClient::AcceptLogin(CUser& User) {
 		// Otherwise, just try any network of the user.
 		if (!m_pNetwork) m_pNetwork = *m_pUser->GetNetworks().begin();
 		if (m_pNetwork && m_pUser->GetNetworks().size() > 1) {
+/*
 			PutStatusNotice("You have several networks configured, but no network was specified for the connection.");
 			PutStatusNotice("Selecting network [" + m_pNetwork->GetName() + "]. To see list of all configured networks, use /znc ListNetworks");
 			PutStatusNotice("If you want to choose another network, use /znc JumpNetwork <network>, or connect to ZNC with username " + m_pUser->GetUserName() + "/<network> (instead of just " + m_pUser->GetUserName() + ")");
+*/
 		}
 	} else {
 		PutStatusNotice("You have no networks configured. Use /znc AddNetwork <network> to add one.");
